@@ -58,15 +58,15 @@
   get_url:
     url: "{{ consul_zip_url }}"
     dest: "{{ role_path }}/files/{{ consul_pkg }}"
-    checksum: "sha256:{{ consul_sha256.stdout }}"
-    timeout: "42"
-  become: false
-  vars:
-    ansible_become: false
-  tags: installation
-  when: not consul_package.stat.exists | bool
-  run_once: true
-  delegate_to: 127.0.0.1
+    #checksum: "sha256:{{ consul_sha256.stdout }}"
+    #timeout: "42"
+  #become: false
+  #vars:
+  #  ansible_become: false
+  #tags: installation
+  #when: not consul_package.stat.exists | bool
+  #run_once: true
+  #delegate_to: 127.0.0.1
 
 - name: Update Alpine Package Manager (APK)
   apk:
